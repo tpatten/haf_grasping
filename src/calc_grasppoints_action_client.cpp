@@ -119,7 +119,8 @@ public:
 
 
 		//subscriber for the point cloud
-		std::string input_pc_topic = "/haf_grasping/depth_registered/single_cloud/points_in_lcs";
+		//std::string input_pc_topic = "/haf_grasping/depth_registered/single_cloud/points_in_lcs";
+		std::string input_pc_topic = "";
 		nh_.param("input_pc_topic", input_pc_topic, input_pc_topic);
 		this->pc_sub = nh_.subscribe(input_pc_topic,1, &CCalcGrasppointsClient::get_grasp_cb, this);
 		this->pcd_sub = nh_.subscribe("/haf_grasping/input_pcd_rcs_path",1, &CCalcGrasppointsClient::open_pcd_and_trig_get_grasp_cb, this);

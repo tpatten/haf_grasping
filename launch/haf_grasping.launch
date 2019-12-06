@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
 <launch>
-	<node name="calc_grasppoints_svm_action_server" pkg="haf_grasping" type="calc_grasppoints_action_server">        
+	<node name="calc_grasppoints_svm_action_server" pkg="haf_grasping" type="calc_grasppoints_action_server" output="screen">        
     </node>
 </launch>
