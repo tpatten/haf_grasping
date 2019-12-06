@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <launch>
 	<!-- start haf_grasp calculation SERVER -->
 	<node 	
@@ -65,8 +66,3 @@
 	<param name="svmmodel_file_path" value="$(find haf_grasping)/data/all_features.txt.scale.model" />
 
 </launch>
-
-
-
-
-

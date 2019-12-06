@@ -69,6 +69,8 @@
 #include "pcl/registration/ia_ransac.h"
 #include <pcl/point_types.h>
 #include <pcl/io/pcd_io.h>
+//OpenCV includes
+#include <opencv2/opencv.hpp>
 //ROS includes
 #include <ros/ros.h>
 #include "ros/ros.h"
