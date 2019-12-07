@@ -1425,8 +1425,18 @@ int main (int argc, char** argv)
 {
   ROS_INFO("ROS NODE calc_grasppoints_svm_action_server (from package haf_grasping) started");
   ros::init(argc, argv, "calc_grasppoints_svm_action_server");
-  CCalc_Grasppoints * calc_gps = new CCalc_Grasppoints(ros::this_node::getName());
-  ros::spin();
+
+  // Check if the haf enabled variable is set
+  std::string hsrb_grasp_estimator_baseline;
+  ros::param::param<std::string>("/grasp_estimator/baseline", hsrb_grasp_estimator_baseline, "");
+  bool haf_enabled;
+  ros::param::param<bool>("/haf_grasping_enabled", haf_enabled, false);
+  if (hsrb_grasp_estimator_baseline == "haf" || haf_enabled) {
+      CCalc_Grasppoints *calc_gps = new CCalc_Grasppoints(ros::this_node::getName());
+      ros::spin();
+  } else {
+      ROS_WARN("HAF is not selected, stopping node");
+  }
   return (0);
 }
 

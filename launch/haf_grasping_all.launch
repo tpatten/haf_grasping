@@ -1,5 +1,9 @@
 <?xml version="1.0"?>
 <launch>
+
+  <!-- enable HAF -->
+	<rosparam param="haf_grasping_enabled"> true </rosparam>
+
 	<!-- start haf_grasp calculation SERVER -->
 	<node 	
 	    name="calc_grasppoints_svm_action_server" 
